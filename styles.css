@@ -1,0 +1,97 @@
+/* =====================================
+   LiveLab 10 – GlowGuide Demo Styles
+   STEP: Explain visual hierarchy + branding
+===================================== */
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #fdfaf7;
+  color: #222;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  border-bottom: 1px solid #eee;
+}
+
+nav h2 {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f7efe9 100%);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  max-width: 800px;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.ai-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  max-width: 600px;
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+#response {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #f4f4f4;
+  border-radius: 8px;
+  min-height: 60px;
+  text-align: left;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #777;
+}
