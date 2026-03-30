@@ -23,12 +23,16 @@ button.addEventListener("click", async () => {
 
   // STEP 3: API Call with async/await + try/catch
   try {
-    const res = await fetch("YOUR_CLOUDFLARE_WORKER_URL", {
+    const res = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${api_key}`,
       },
-      body: JSON.stringify({ message: userQuestion })
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: userQuestion }],
+      }),
     });
 
     // STEP 4: Handle non-200 responses
@@ -38,9 +42,9 @@ button.addEventListener("click", async () => {
 
     const data = await res.json();
 
-    // Adjust depending on Worker response format
-    responseDiv.textContent = data.reply || "No response received.";
-
+    // Extract the AI's response from OpenAI's format
+    responseDiv.textContent =
+      data.choices?.[0]?.message?.content || "No response received.";
   } catch (error) {
     console.error("Error:", error);
     responseDiv.textContent = "Oops! Something went wrong. Please try again.";
