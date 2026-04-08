@@ -45,6 +45,14 @@ button.addEventListener("click", async () => {
     // Extract the AI's response from OpenAI's format
     responseDiv.textContent =
       data.choices?.[0]?.message?.content || "No response received.";
+     // let content = "No response received.";
+     // if (data.choices && data.choices[0] && data.choices[0].message) {
+  content = data.choices[0].message.content;
+}
+
+if (data.choices && data.choices[0] && data.choices[0].message) {
+  content = data.choices[0].message.content;
+}
   } catch (error) {
     console.error("Error:", error);
     responseDiv.textContent = "Oops! Something went wrong. Please try again.";
